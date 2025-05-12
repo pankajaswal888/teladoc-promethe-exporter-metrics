@@ -1,0 +1,7 @@
+global:
+  scrape_interval: 15s  # How often to scrape metrics
+
+scrape_configs:
+  - job_name: 'task-exporter'  # Name for this scrape config
+    static_configs:
+      - targets: ['task-exporter:5001']  # Where to find our exporter
