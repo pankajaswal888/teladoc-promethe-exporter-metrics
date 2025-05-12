@@ -1,5 +1,5 @@
-from enum import Enum  # Add this import at the top
-from dataclasses import dataclass
+from enum import Enum  # For creating enumerated constants
+from dataclasses import dataclass # For reducing boilerplate code in classes
 
 class TaskStatus(str, Enum):
     COMPLETED = "completed"
