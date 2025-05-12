@@ -64,3 +64,6 @@ curl http://localhost:5002/metrics
 deactivate
 docker-compose down
 
+
+**#Output file attached with snapshot data**
+file name - teladoc-task-exporter_doc
