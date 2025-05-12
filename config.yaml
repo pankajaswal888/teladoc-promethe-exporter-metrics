@@ -4,7 +4,10 @@ app:
   port: 5000
 
 prometheus:
-  metrics_path: "/metrics"
+  metrics_path: "/metrics" ## Endpoint for metrics
+  default_labels:
+    app_name: "teladoc_task_exporter"
+    environment: "development"
 
 tasks:
   allowed_statuses: ["completed", "failed", "succeeded"]
