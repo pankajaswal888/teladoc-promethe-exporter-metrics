@@ -65,5 +65,5 @@ deactivate
 docker-compose down
 
 
-**#Output file attached with snapshot data**
-file name - teladoc-task-exporter_doc
+# Output file attached with snapshot data
+file name - teladoc-task-exporter_doc.docx
