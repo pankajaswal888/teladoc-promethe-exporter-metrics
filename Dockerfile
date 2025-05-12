@@ -24,4 +24,4 @@ ENV FLASK_ENV=production
 EXPOSE 5001
 
 # Use Gunicorn as production server
-CMD ["gunicorn", "--bind", "0.0.0.0:5001", "app:create_app()"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5002", "app:create_app()"]
