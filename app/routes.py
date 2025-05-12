@@ -1,8 +1,14 @@
-from flask import request, jsonify
-from .exporter import TaskExporter
-from .models import Task
+# Import Flask web framework components
+from flask import request, jsonify, Response
+
+# Import application components
+from .exporter import TaskExporter  # Metrics recording
+from .models import Task  # Data validation model
+
+# Import Prometheus metrics generator
 from prometheus_client import generate_latest
-from flask import Response
+
+# Initialize the metrics exporter as a singleton
 
 exporter = TaskExporter()
 
@@ -28,7 +34,7 @@ def init_routes(app):
                 return jsonify({
                     "status": "error",
                     "message": "No data provided"
-                }), 400
+                }), 400 # HTTP 400 Bad Request
                 
             task = Task.from_dict(data)
             exporter.process_task(task)
@@ -42,7 +48,7 @@ def init_routes(app):
                     "status": task.status.value,
                     "duration": task.duration
                 }
-            }), 200
+            }), 200 # HTTP 200 OK
             
         except ValueError as e:
             return jsonify({
@@ -53,7 +59,7 @@ def init_routes(app):
             return jsonify({
                 "status": "error",
                 "message": f"Server error: {str(e)}"
-            }), 500
+            }), 500 # HTTP 500 Internal Server Error
 
     @app.route('/metrics')
     def metrics():
