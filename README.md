@@ -59,3 +59,8 @@ curl -X POST -H "Content-Type: application/json" -d '{
 # To view metrics
 curl http://localhost:5002/metrics
 
+
+# Close docker and venv 
+deactivate
+docker-compose down
+
