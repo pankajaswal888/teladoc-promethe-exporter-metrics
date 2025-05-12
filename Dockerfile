@@ -21,7 +21,7 @@ ENV FLASK_APP=app
 ENV FLASK_ENV=production
 
 # Expose port
-EXPOSE 5001
+EXPOSE 5002
 
 # Use Gunicorn as production server
 CMD ["gunicorn", "--bind", "0.0.0.0:5002", "app:create_app()"]
