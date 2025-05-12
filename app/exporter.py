@@ -1,10 +1,12 @@
+# Import Prometheus Gauge metric type for tracking.
 from prometheus_client import Gauge
+# Import Task model for type hints & data validation
 from .models import Task
 
 class TaskExporter:
     def __init__(self):
         self.task_duration = Gauge(
-            'task_duration',
+            'task_duration',         # Metric name
             'Duration of tasks in seconds',
             ['tool', 'task', 'status']
         )
