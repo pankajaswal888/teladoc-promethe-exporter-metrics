@@ -1,4 +1,4 @@
-# Teladoc Task Exporter
+# Prometheus Task Exporter metrics
 
 A Flask application that receives task statuses and exposes them as Prometheus metrics.
 
